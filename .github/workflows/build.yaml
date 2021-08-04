@@ -181,4 +181,4 @@ jobs:
       - uses: actions/checkout@v2
       - name: set up raylib
         run: |
-          cd .. && git clone https://github.com/Microsoft/vcpkg.git && cd vcpkg && ./bootstrap-vcpkg.sh && ./vcpkg integrate install && vcpkg install raylib
+          git clone https://github.com/Microsoft/vcpkg.git && cd vcpkg && ./bootstrap-vcpkg.sh && ./vcpkg integrate install && vcpkg install raylib
