@@ -144,9 +144,14 @@ jobs:
           
   build-windows-sdl2:
     runs-on: windows-latest
-    container: amitie10g/msys2
+    defaults:
+      run:
+        shell: msys2 {0}
     steps:
+      - uses: msys2/setup-msys2@v2
+        with:
+          update: true
+          install: >-
+            base-devel
+            git
       - uses: actions/checkout@v2
-      - name: install dependencies
-        run: |
-          pacman -S SDL2 SDL2_image SDL2_mixer SDL2_ttf
