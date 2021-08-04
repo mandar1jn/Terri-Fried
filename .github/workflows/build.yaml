@@ -141,3 +141,9 @@ jobs:
         with:
           name: switch
           path: ./switch/Terri-Fried.nro
+          
+  build-windows-sdl2:
+    runs-on: ubuntu-latest
+    container: amitie10g/msys2 WINDOWS_VERSION=latest
+    steps:
+      - uses: actions/checkout@v2
