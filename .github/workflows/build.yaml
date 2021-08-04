@@ -160,3 +160,6 @@ jobs:
             mingw64/mingw-w64-x86_64-SDL2_ttf
             make
       - uses: actions/checkout@v2
+      - name: build
+        run: |
+          cd windows/sdl2 && make && dir
