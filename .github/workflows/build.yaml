@@ -154,7 +154,8 @@ jobs:
           install: >-
             base-devel
             git
-            mingw-w64-x86_64-toolchain mingw64/mingw-w64-x86_64-SDL2
+            mingw-w64-x86_64-toolchain
+            mingw64/mingw-w64-x86_64-SDL2
             mingw64/mingw-w64-x86_64-SDL2_mixer
             mingw64/mingw-w64-x86_64-SDL2_image
             mingw64/mingw-w64-x86_64-SDL2_ttf
@@ -162,4 +163,22 @@ jobs:
       - uses: actions/checkout@v2
       - name: build
         run: |
-          cd windows/sdl2 && make && dir
+          cd windows/sdl2 && make && cd build && dir
+  
+  build-windows-raylib:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+      - uses: msys2/setup-msys2@v2
+        with:
+          update: true
+          install: >-
+            base-devel
+            git
+            make
+      - uses: actions/checkout@v2
+      - name: set up raylib
+        run: |
+          cd .. && git clone https://github.com/Microsoft/vcpkg.git && cd vcpkg && ./bootstrap-vcpkg.sh && ./vcpkg integrate install && vcpkg install raylib
