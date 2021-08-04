@@ -163,7 +163,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: build
         run: |
-          cd windows/sdl2 && make && cd build && dir
+          cd windows/sdl2 && make && cd build/bin && dir
   
   build-windows-raylib:
     runs-on: windows-latest
