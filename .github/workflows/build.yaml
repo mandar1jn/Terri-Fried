@@ -154,9 +154,9 @@ jobs:
           install: >-
             base-devel
             git
+            mingw-w64-x86_64-toolchain mingw64/mingw-w64-x86_64-SDL2
+            mingw64/mingw-w64-x86_64-SDL2_mixer
+            mingw64/mingw-w64-x86_64-SDL2_image
+            mingw64/mingw-w64-x86_64-SDL2_ttf
             make
-            libsdl2-dev
-            libsdl2-image-dev
-            libsdl2-ttf-dev
-            libsdl2-mixer-dev
       - uses: actions/checkout@v2
