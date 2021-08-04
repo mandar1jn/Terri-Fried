@@ -144,6 +144,9 @@ jobs:
           
   build-windows-sdl2:
     runs-on: ubuntu-latest
-    container: amitie10g/msys2 WINDOWS_VERSION=latest
+    container: amitie10g/msys2
     steps:
       - uses: actions/checkout@v2
+      - name: install dependencies
+        run: |
+          pacman -S SDL2 SDL2_image SDL2_mixer SDL2_ttf
