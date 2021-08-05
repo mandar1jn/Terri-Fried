@@ -189,4 +189,4 @@ jobs:
           git clone https://github.com/raysan5/raylib --branch 3.0.0
       - name: build raylib
         run: |
-          cd raylib/source && make PLATFORM=PLATFORM_DESKTOP
+          cd raylib/src && make PLATFORM=PLATFORM_DESKTOP
