@@ -189,4 +189,4 @@ jobs:
           git clone https://github.com/raysan5/raylib --branch 3.0.0
       - name: build raylib
         run: |
-          cd raylib/src && make clean all install PLATFORM=PLATFORM_DESKTOP
+          cd raylib/src && sudo make all install PLATFORM=PLATFORM_DESKTOP
