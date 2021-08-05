@@ -183,7 +183,8 @@ jobs:
             base-devel
             git
             make
+            python3
       - uses: actions/checkout@v2
       - name: set up raylib
         run: |
-          pacman -Ss raylib
+          pip install conan && conan install raylib/3.5.0
