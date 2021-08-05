@@ -187,4 +187,4 @@ jobs:
       - uses: actions/checkout@v2
       - name: set up raylib
         run: |
-          pip install conan && conan install raylib/3.5.0
+          pip3 install conan && conan install raylib/3.5.0
