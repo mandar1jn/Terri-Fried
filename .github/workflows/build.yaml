@@ -191,6 +191,10 @@ jobs:
         shell: cmd
         run: |
           cd raylib/src && make all PLATFORM=PLATFORM_DESKTOP
+      - name: make raylib dirs
+        run: |
+          mkdir --parents --verbose /usr/local/lib
+          mkdir --parents --verbose /usr/local/include
       - name: install raylib
         run: |
-          cd raylib/src && cp --update --verbose ../libraylib.a /usr/local/lib/libraylib.a && cp --update raylib.h /usr/local/include/raylib.h
+          cd raylib/src && cp --update --verbose ./libraylib.a /usr/local/lib/libraylib.a && cp --update raylib.h /usr/local/include/raylib.h
