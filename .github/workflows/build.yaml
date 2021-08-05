@@ -182,11 +182,11 @@ jobs:
           install: >-
             base-devel
             git
-            make
+            mingw-w64-x86_64-toolchain
       - uses: actions/checkout@v2
       - name: clone raylib
         run: |
           git clone https://github.com/raysan5/raylib --branch 3.0.0
       - name: build raylib
         run: |
-          cd raylib/src && make PLATFORM=PLATFORM_DESKTOP
+          cd raylib/src && make clean all install PLATFORM=PLATFORM_DESKTOP
