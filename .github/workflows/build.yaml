@@ -197,4 +197,7 @@ jobs:
           mkdir --parents --verbose /usr/local/include
       - name: install raylib
         run: |
-          cd raylib/src && cp --update --verbose ./libraylib.a /usr/local/lib/libraylib.a && cp --update raylib.h /usr/local/include/raylib.h
+          cd raylib/src && cp --update --verbose ./libraylib.a /usr/local/lib/libraylib.a && cp --update --verbose raylib.h /usr/local/include/raylib.h
+      - name: build
+        run: |
+          cd windows/raylib && make PLATFORM=PLATFORM_DESKTOP && dir
