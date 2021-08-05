@@ -183,8 +183,10 @@ jobs:
             base-devel
             git
             make
-            python3
       - uses: actions/checkout@v2
-      - name: set up raylib
+      - name: clone raylib
         run: |
-          pip3 install conan && conan install raylib/3.5.0
+          git clone https://github.com/raysan5/raylib --branch 3.0.0
+      - name: build raylib
+        run: |
+          cd raylib/source && make PLATFORM=PLATFORM_DESKTOP
