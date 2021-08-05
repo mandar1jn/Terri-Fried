@@ -193,4 +193,4 @@ jobs:
           cd raylib/src && make all PLATFORM=PLATFORM_DESKTOP
       - name: install raylib
         run: |
-          cd raylib/src && export RAYLIB_RELEASE_PATH=../ && export RAYLIB_LIB_NAME=raylib && export RAYLIB_INSTALL_PATH=/usr/local/lib && export RAYLIB_H_INSTALL_PATH=/usr/local/include && 'cp --update --verbose "$RAYLIB_RELEASE_PATH"/lib"$RAYLIB_LIB_NAME".a "$RAYLIB_INSTALL_PATH"/lib"$RAYLIB_LIB_NAME".a' && cp --update raylib.h "$RAYLIB_H_INSTALL_PATH"/raylib.h
+          cd raylib/src && export RAYLIB_RELEASE_PATH=../ && export RAYLIB_LIB_NAME=raylib && export RAYLIB_INSTALL_PATH=/usr/local/lib && export RAYLIB_H_INSTALL_PATH=/usr/local/include && "cp --update --verbose "$(RAYLIB_RELEASE_PATH)/lib$(RAYLIB_LIB_NAME).a $(RAYLIB_INSTALL_PATH)/lib$(RAYLIB_LIB_NAME).a && "cp --update raylib.h $(RAYLIB_H_INSTALL_PATH)/raylib.h"
